@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Hackathon Timer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+
+    <!-- Titre Principal -->
+    <h1 class="main-title" id="mainTitle">Vibe Coding Hackathon'26</h1>
+
+    <!-- Message de fin caché par défaut -->
+    <div class="times-up-msg" id="times-up-text">Time is up!</div>
+
+    <!-- The Clock -->
+    <div class="clock-container" id="clock">
+        <div class="time-card">
+            <span class="number" id="hoursDisplay">00</span>
+            <div class="divider"></div>
+        </div>
+        <div class="time-card">
+            <span class="number" id="minutesDisplay">00</span>
+            <div class="divider"></div>
+        </div>
+        <div class="time-card">
+            <span class="number" id="secondsDisplay">00</span>
+            <div class="divider"></div>
+        </div>
+    </div>
+
+    <!-- Controls Wrapper -->
+    <div class="controls-wrapper">
+        
+        <!-- Setup Inputs (Visible initially) -->
+        <div id="setup-group" class="control-group">
+            <label>H:</label>
+            <input type="number" id="inputHours" min="0" max="99" value="5" onchange="previewTime()">
+            
+            <label>M:</label>
+            <input type="number" id="inputMinutes" min="0" max="59" value="0" onchange="previewTime()">
+            
+            <label>S:</label>
+            <input type="number" id="inputSeconds" min="0" max="59" value="0" onchange="previewTime()">
+            
+            <button class="btn-cyan" onclick="startTimer()">Start</button>
+        </div>
+
+        <!-- Active Controls (Visible when running) -->
+        <div id="active-group" class="control-group hidden">
+            <button class="btn-yellow" id="pauseBtn" onclick="togglePause()">Pause</button>
+            <button class="btn-red" onclick="resetTimer()">Reset</button>
+        </div>
+
+    </div>
+<script src="script.js"></script>
+    
+</body>
+</html>
